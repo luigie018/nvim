@@ -47,3 +47,43 @@ map("n", "<leader>sv", "<cmd>vsplit<CR>", {
 map("n", "<leader>sh", "<cmd>split<CR>", {
     desc = "Horizontal split",
 })
+
+map("n", "<leader>ls", "<cmd>Lazy sync<CR>", {
+    desc = "Lazy: sync plugins",
+})
+
+-- LSP navigation
+map("n", "gd", vim.lsp.buf.definition, {
+    desc = "Go to definition",
+})
+
+map("n", "gr", vim.lsp.buf.references, {
+    desc = "Find references",
+})
+
+map("n", "K", vim.lsp.buf.hover, {
+    desc = "Show documentation",
+})
+
+map("n", "<leader>rn", vim.lsp.buf.rename, {
+    desc = "Rename symbol",
+})
+
+map("n", "<leader>ca", vim.lsp.buf.code_action, {
+    desc = "Code actions",
+})
+
+-- Diagnostics
+map("n", "<leader>dd", vim.diagnostic.open_float, {
+    desc = "Show diagnostics",
+})
+
+map("n", "<leader>dl", vim.diagnostic.setloclist, {
+    desc = "List diagnostics",
+})
+
+map("n", "<leader>jo", function()
+    require("jdtls").organize_imports()
+end, {
+    desc = "Java: Organize imports",
+})
